@@ -1,2 +1,3 @@
 # ProjectEuler
-Shows example of project euler problems
+
+Shows example of project euler problems in multiple languages (c, python)

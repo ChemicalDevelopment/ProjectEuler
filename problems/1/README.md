@@ -10,11 +10,13 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 ### Approach
 
+#### Brute Force
+
 We want to find the sum of all `k` such that `k = 0 mod 3 or k = 0 mod 5`
 
 This simple solution is the `brute_force` solution.
 
-Faster solution:
+#### Fast Solution
 We will use the following equality:
 
 `sum(k) for k = 0...n = n(n+1)/2`
@@ -22,7 +24,6 @@ We will use the following equality:
 and the fact that:
 
 `sum(a*k) for k = 0...n = a*n(n+1)/2`
-
 
 ### Result 
 
