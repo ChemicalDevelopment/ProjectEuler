@@ -1,0 +1,11 @@
+ma = 1000
+sum = 0
+
+tmp = @summult ma 3
+sum = sum + tmp
+tmp = @summult ma 5
+sum = sum + tmp
+tmp = @summult ma 15
+sum = sum - tmp
+
+int_var sum

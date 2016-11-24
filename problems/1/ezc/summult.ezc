@@ -1,0 +1,8 @@
+function summult: ret MAX A
+_count = MAX - 1 : _count = _count / A : _count = trunc _count
+
+smm = _count + 1
+smt = _count * smm : smt = smt * A : smt = smt / 2
+
+ret = trunc smt
+
