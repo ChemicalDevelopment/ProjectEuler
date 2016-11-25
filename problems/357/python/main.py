@@ -2,13 +2,13 @@ import time
 
 # our number to max 
 max = 100000000
+#max = 1000000
 
 # this is the maximum number that will be computed by d+p/d
 max_val = max+1
 
 # arrays used to test primality. We only need half for the prime array because we know 2 * k is not prime except for k = 1
 primes = [True] * (max_val / 2)
-squarefree = [True] * (max_val)
 
 # returns True if n is prime, False otherwise
 def isprime(n):
@@ -16,9 +16,6 @@ def isprime(n):
 	if n % 2 == 0: return False
 	return primes[n>>1]
 
-# returns True of n =/= a^2 * b for any integers a and b
-def issquarefree(n):
-	return squarefree[n]
 
 # sieves for primes and square free integers
 def set_sieve():
@@ -32,22 +29,16 @@ def set_sieve():
 				primes[j>>1] = False
 				j += 2 * i
 		i += 2
-	i = 2
-	while i * i < max_val:
-		for j in range(i * i, max_val, i * i):
-			squarefree[j] = False
-		i += 1
+
 
 # returns true if the general rule for summing (that d + p/d is prime for all divisors) is true
 def all_div_prime(n):
 	# escape early if conditions are not met
-	if not (isprime(n+1) and issquarefree(n)):
+	if not (isprime(n+1)):
 		return False
 	i = 1
 	# maximum factor is sqrt(n)
-	lim = int(n**.5)+1
-	# loop through
-	while i <= lim:
+	while i * i <= n + 1:
 		if n % i == 0:
 			if not isprime(i + n / i):
 				return False
